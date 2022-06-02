@@ -1,0 +1,163 @@
+:root {
+    --color-primary: #f92f00;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #d1d1d1;
+    --lightgray-color: #d1d1d1;
+    --header-height: 120px;
+    --navbar-height: 28px;
+    --searchs-height: calc(var(--header-height) - var(--navbar-height));
+    --color-footer: #737373;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: Lato-Regular, sans-serif;
+    box-sizing: border-box;
+    /* text-transform: capitalize; xhuw cái đầu tiên là chữ in hoa */
+}
+
+@font-face {
+    font-family: Lato-Regular;
+    src: url('../font/roboto/Roboto-Regular.ttf');
+}
+
+.a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.p {
+    margin: 0;
+}
+
+
+/* Responsive */
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -6px;
+    margin-right: -6px;
+}
+
+
+/* test */
+
+.grid__column-2 {
+    padding: 0 6px;
+    width: 16.6667%;
+}
+
+.grid__column-2.item-product {
+    padding: 0 6px;
+    width: 20%;
+}
+
+.grid__column-2-4 {
+    padding: 0 6px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding: 0 6px;
+    width: 83.3334%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* modal */
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    /*căn giữa theo chiều dọc*/
+    justify-content: center;
+    animation: fadeIn ease 0.2s;
+    /*căn giữa theo chiều ngang của*/
+    /* z-index: muốn cho lớp dưới đè lên lớp trên ta dùng thuộc thính z-index: giá trị của thuộc tính này là số */
+}
+
+.modal-container {
+    margin: auto;
+    /* background-color: var(--white-color);
+    border-radius: 5px; */
+    animation: modalAnimation ease 0.2s;
+}
+
+.open {
+    display: flex;
+}
+
+@keyframes modalAnimation {
+    from {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* btn--primary */
+
+.btn {
+    width: 142px;
+    height: 36px;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--color-primary);
+}
+
+.btn.btn--disabled {
+    opacity: 0.4;
+    color: #b1b1b1;
+    cursor: default;
+    filter: grayscale(100%);
+}
+
+.btn.btn--disabled:hover {
+    background-color: inherit;
+    cursor: default;
+}
+
+
+/* End btn--primary  */
